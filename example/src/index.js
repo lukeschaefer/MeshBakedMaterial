@@ -84,7 +84,7 @@ glbLoader.load("monkey_bake.glb", (gltf) => {
   const bakedTexture = textureLoader.load('map.jpg');
   bakedTexture.flipY = false;
 
-  const roughnessMap = textureLoader.load("roughness.png");
+  const roughnessMap = textureLoader.load("roughness.jpg");
 
   const lampMat = new THREE.MeshBasicMaterial({color: 0xFFFFFF});
 
@@ -111,17 +111,18 @@ glbLoader.load("monkey_bake.glb", (gltf) => {
   const updateSceneWithMaterial = (material) => {
     gltf.scene.traverse(obj => {
       if(obj instanceof THREE.Mesh) {
+        // Lamps should always just be pure white:
         obj.material = obj.name.startsWith("Icosphere") ? lampMat : material;
       }
     })
   };
 
-  updateSceneWithMaterial(basicMat);
-
   scene.add(gltf.scene);
 
-  const ambientLight = new THREE.AmbientLight(0xFFFFFF, .5);
+
+  const ambientLight = new THREE.AmbientLight(0xFFFFFF, 0);
   scene.add(ambientLight);
+
   const sceneUpdater = {
     "MeshBasicMaterial": () => updateSceneWithMaterial(basicMat),
     "MeshStandardMaterial": () => {
@@ -135,11 +136,13 @@ glbLoader.load("monkey_bake.glb", (gltf) => {
       // to look correct - but we can crank up point light brightness to get lots 
       // of specular highlights:
       ambientLight.intensity = 0;
-      lights.forEach(light => light.intensity = 1.2);
+      lights.forEach(light => light.intensity = 1.4);
       updateSceneWithMaterial(standardMat)
       updateSceneWithMaterial(bakedMat)
     }
   }
+
+  sceneUpdater.MeshBakedMaterial();
 
   gui.add(sceneUpdater, "MeshBasicMaterial");
   gui.add(sceneUpdater, "MeshStandardMaterial");
