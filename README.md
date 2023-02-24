@@ -1,7 +1,6 @@
 # MeshBakedMaterial
 
-A material for ThreeJS that allows you to combine the baked lighting from a MeshBasicMaterial, with the specular highlights of MeshStandardMaterial. 
-Check out the [live example](https://mesh-baked-material-example.vercel.app/) to see what this does for you. For more info, scroll down to **About**.
+A material for ThreeJS that allows you to combine the baked lighting from a MeshBasicMaterial, with the specular highlights of MeshStandardMaterial. Check out the [live example]() to see what this does for you. For more info, scroll down to **About**.
 
 
 ## How to use
