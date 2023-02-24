@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MeshBakedMaterial Example</title>
+    <style>
+      body, html {
+        padding: 0;
+        margin: 0;
+        overflow: hidden;
+      }
+      #overlay {
+        position: fixed;
+        top: 0;
+        margin: auto;
+        width: 100%;
+        font-family: sans-serif;
+        text-align: center;
+        color: white;
+        text-shadow: 0 2px 2px black, 0 2px 6px black, 0 0 32px black;
+        opacity: .8;
+      }
+
+      pre {
+        margin-top: -22px;
+        padding: 0;
+      }
+
+      a {
+        color: cornflowerblue !important;
+      }
+    </style>
+</head>
+<body>
+    <canvas class="webgl"></canvas>
+    <div id="overlay">
+      <h1>MeshBakedMaterial Example</h1>
+      <pre>Click the buttons right to change the material. (see <a href="https://github.com/lukeschaefer/MeshBakedMaterial">here</a> for more info.)</pre>
+    </div>
+    <script type="module" src="./index.js"></script>
+</body>
+</html>
