@@ -1,0 +1,28 @@
+{
+  "name": "mesh-baked-material",
+  "version": "1.0.0",
+  "description": "A material for ThreeJS that allows you to combine the baked lighting from a MeshBasicMaterial, with the specular highlights of MeshStandardMaterial.",
+  "main": "dist/MeshBakedMaterial.js",
+  "scripts": {
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lukeschaefer/MeshBakedMaterial.git"
+  },
+  "keywords": [
+    "threejs",
+    "baked",
+    "material"
+  ],
+  "author": "Luke Schaefer",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lukeschaefer/MeshBakedMaterial/issues"
+  },
+  "homepage": "https://github.com/lukeschaefer/MeshBakedMaterial#readme",
+  "devDependencies": {
+    "@types/three": "^0.149.0",
+    "three": "^0.150.0",
+    "typescript": "^4.9.5"
+  }
+}
